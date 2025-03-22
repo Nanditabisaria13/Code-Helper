@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@import 'remixicon/fonts/remixicon.css';
+
+html,body{
+  width: 100%;
+  height: 100%;
+} 
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Global styles for headings, paragraphs, lists, and code blocks */
+.output h1, h2, h3, h4, h5, h6 {
+  margin-top: 20px;  
+  margin-bottom: 10px;
+  color: rgb(253, 247, 247);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+h6 {
+  color: black;
+}
+
+p {
+  margin-top: 10px;  
+  margin-bottom: 10px;  
+}
+
+ul,
+ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 20px;  
+}
+
+li {
+  margin-bottom: 5px; 
+}
+
+pre {
+  margin-top: 10px;  
+  margin-bottom: 10px; 
+}
+
+code {
+  padding: 0 2px;
+  border-radius: 3px;  
+}
