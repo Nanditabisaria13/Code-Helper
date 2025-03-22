@@ -14,22 +14,22 @@ const Navbar = () => {
           </Link>
         </div>
         <ul className="nav-links hidden md:flex items-center justify-between gap-5">
-          <li className="text-lg text-white font-normal hover:text-purple-600">
+          <li className="text-xl text-white font-normal hover:text-purple-600">
             <Link to="hero" smooth={true} offset={0} duration={500}>
               Home{" "}
             </Link>
           </li>
-          <li className="text-lg text-white font-normal hover:text-purple-600">
+          <li className="text-xl text-white font-normal hover:text-purple-600">
             <Link to="features" smooth={true} offset={-80} duration={500}>
               Features
             </Link>
           </li>
-          <li className="text-lg text-white font-normal hover:text-purple-600">
+          <li className="text-xl text-white font-normal hover:text-purple-600">
             <Link to="about-us" smooth={true} offset={-90} duration={500}>
               About Us{" "}
             </Link>{" "}
           </li>
-          <li className="text-lg text-white font-normal hover:text-purple-600">
+          <li className="text-xl text-white font-normal hover:text-purple-600">
             <Link to="footer" smooth={true} offset={-260} duration={500}>
               Contact{" "}
             </Link>

@@ -4,8 +4,8 @@ import Main from "../components/Main";
 import { AppContext } from "../context/AppContext";
 
 const CodeReviewer = () => {
-  const [code, setCode] = useState(`function sum(){
-    return 1+1}`);
+  const [code, setCode] = useState(`function sum() {
+    return 1+1 }`);
   const [review, setReview] = useState("");
   const { backendUrl } = useContext(AppContext);
 
