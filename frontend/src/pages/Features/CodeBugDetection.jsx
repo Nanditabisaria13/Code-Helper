@@ -1,29 +1,39 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import Main from "../components/Main";
-import { AppContext } from "../context/AppContext";
+import Main from "../../components/Common/Main";
+import { AppContext } from "../../context/AppContext";
 
 const CodeBugDetection = () => {
   const { backendUrl } = useContext(AppContext);
+
   const [code, setCode] = useState(`function sum(a, b) {
         return a + b;
     }`);
 
   const [bugReport, setBugReport] = useState(""); // For bug report
+  const {saveHistory} = useContext(AppContext)
 
+  
   async function handleBugDetection() {
     try {
       const response = await axios.post(backendUrl + "/ai/code-bugDetection", {
         code,
       });
-      setBugReport(response.data);
+      const result = response.data;
+      setBugReport(result);
+      saveHistory({
+      feature: "Code Bug Detection",
+      input: code,
+      output: result,
+    })
     } catch (err) {
       console.error("Error during bug detection:", err);
     }
   }
-
+  
   return (
     <>
+    
       <Main
         handleFunction={handleBugDetection}
         code={code}

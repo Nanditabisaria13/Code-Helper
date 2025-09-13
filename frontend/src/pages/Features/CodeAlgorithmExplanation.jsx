@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import Main from "../components/Main";
-import { AppContext } from "../context/AppContext";
+import Main from "../../components/Common/Main";
+import { AppContext } from "../../context/AppContext";
 
 const CodeAlgorithmExplanation = () => {
   const { backendUrl } = useContext(AppContext);
@@ -17,6 +17,7 @@ const CodeAlgorithmExplanation = () => {
       return -1;
     }`);
   const [algorithmExplanation, setAlgorithmExplanation] = useState("");
+    const {saveHistory} = useContext(AppContext)
 
   const fetchAlgorithmExplanation = async () => {
     try {
@@ -24,7 +25,13 @@ const CodeAlgorithmExplanation = () => {
         backendUrl + "/ai/code-algorithmExplanation",
         { code }
       );
-      setAlgorithmExplanation(response.data);
+      const result = response.data;
+      setAlgorithmExplanation(result);
+        saveHistory({
+      feature: "Algorithm Explanation",
+      input: code,
+      output: result,
+    })
     } catch (error) {
       console.error("Error in fetching algorithm explanation:", error);
     }

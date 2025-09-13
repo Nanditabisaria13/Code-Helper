@@ -1,20 +1,27 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import Main from "../components/Main";
-import { AppContext } from "../context/AppContext";
+import Main from "../../components/Common/Main";
+import { AppContext } from "../../context/AppContext";
 
 const CodeReviewer = () => {
   const [code, setCode] = useState(`function sum() {
     return 1+1 }`);
   const [review, setReview] = useState("");
   const { backendUrl } = useContext(AppContext);
+    const {saveHistory} = useContext(AppContext)
 
   async function reviewCode() {
     try {
       const response = await axios.post(backendUrl + "/ai/get-review", {
         code,
       });
-      setReview(response.data);
+        const result = response.data;
+      setReview(result);
+        saveHistory({
+      feature: "Code Review",
+      input: code,
+      output: result,
+    })
     } catch (err) {
       console.error("Error while review the code:", err);
     }

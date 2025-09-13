@@ -4,8 +4,10 @@ import Editor from "react-simple-code-editor";
 import prism from "prismjs";
 import rehypeHighlight from "rehype-highlight";
 import Markdown from "react-markdown";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 import { toast } from "react-toastify";
+// import vsDark from "prism-react-renderer/themes/vsDark";
+
 
 const Main = ({
   handleFunction,
@@ -19,6 +21,7 @@ const Main = ({
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const { selectedLanguage, setSelectedLanguage } = useContext(AppContext);
+  const{token} = useContext(AppContext)
 
   useEffect(() => {
     prism.highlightAll();
@@ -42,19 +45,17 @@ const Main = ({
     }
   };
   return (
-    <div className="min-h-screen md:h-screen w-full bg-[#2d2d2d] p-4">
-      <main className="h-screen md:h-full w-full flex flex-col md:flex-row gap-[1rem]">
+    <div className={`min-h-screen md:h-screen w-full bg-[#141414] p-4 ${token?'mt-18':''}`}>
+      <main className={`h-screen w-full flex flex-col md:flex-row gap-[1rem] ${token?'md:h-[88vh]':'md:h-full'}`}>
         {/* Code Editor Section */}
         <div className="left bg-[#000000] h-1/2 md:h-full w-full md:w-1/2 relative border-2 border-white rounded-xl overflow-auto">
           <div className="code h-full w-full ">
             <Editor
-              value={code}
-              onValueChange={(newCode) => setCode(newCode)}
-              highlight={(code) =>
-                prism.highlight(code, prism.languages.javascript, "javascript")
-              }
-              padding={10}
-              style={{
+              value={code} 
+               onValueChange={(newCode) => setCode(newCode)}
+               highlight={(code) => prism.highlight(code, prism.languages.javascript, "javascript")}
+               padding={10}
+               style={{
                 fontFamily: '"Fira code", "Fira Mono", monospace',
                 borderRadius: "5px",
                 height: "100%",

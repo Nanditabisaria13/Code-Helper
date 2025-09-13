@@ -1,11 +1,15 @@
 import React, { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Link } from "react-scroll";
+// import { useClerk, UserButton, useUser } from '@clerk/clerk-react'
 
 const Navbar = () => {
   const [showMenu, SetShowMenu] = useState(false);
-
+  // const {openSignIn} = useClerk()
+  const navigate = useNavigate()
+ 
   return (
-    <nav className="w-full p-3 sticky top-0 left-0 -mt-2 z-50 bg-[#000] cursor-pointer drop-shadow-md">
+    <nav className="w-full p-3 fixed top-0 left-0  z-50 bg-[#000] cursor-pointer drop-shadow-md">
       <div className="navbar flex items-start justify-between">
         <div className="logo text-xl text-white font-medium">
           <Link to="/">
@@ -35,10 +39,20 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
+
+        <div className="flex items-center justify-between gap-3">
         <i
           className="ri-menu-3-line w-6 text-white text-2xl md:hidden"
           onClick={() => SetShowMenu(true)}
         ></i>
+        <div>
+          <button onClick={()=>navigate('/signup')} className='hidden  bg-transparent text-white sm:flex items-center gap-4 px-4 py-2 sm:px-8 sm:py-3 text-sm sm:text-base border border-white rounded-xl hover:bg-white hover:text-black '>
+        Get Started 
+       </button>
+        <i className="ri-login-box-line text-3xl text-neutral-800 dark:text-white block sm:hidden"></i>
+     </div>
+
+        </div>
       </div>
 
       {/* mobile menu */}

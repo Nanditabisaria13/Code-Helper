@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import Main from "../components/Main";
-import { AppContext } from "../context/AppContext";
+import Main from "../../components/Common/Main";
+import { AppContext } from "../../context/AppContext";
 
 const CodeOptimization = () => {
   const { backendUrl } = useContext(AppContext);
@@ -10,6 +10,7 @@ const CodeOptimization = () => {
     }`);
 
   const [optimizedCode, setOptimizedCode] = useState("");
+    const {saveHistory} = useContext(AppContext)
 
   const handleGenerateExplanation = async () => {
     try {
@@ -17,12 +18,16 @@ const CodeOptimization = () => {
         backendUrl + "/ai/code-codeOptimization",
         { code }
       );
-      setOptimizedCode(response.data);
+        const result = response.data;
+      setOptimizedCode(result);
+        saveHistory({
+      feature: "Code Optimization",
+      input: code,
+      output: result,
+    })
     } catch (error) {
       console.error("Error generating optimization explanation:", error);
-    } finally {
-      setIsLoading(false);
-    }
+    } 
   };
 
   return (

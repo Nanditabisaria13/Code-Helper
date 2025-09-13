@@ -1,19 +1,26 @@
 import React, { useContext, useState } from "react";
-import Main from "../components/Main";
+import Main from "../../components/Common/Main";
 import axios from "axios";
-import { AppContext } from "../context/AppContext";
+import { AppContext } from "../../context/AppContext";
 
 const CodeRefactor = () => {
   const [code, setCode] = useState(`function sum() { return 1 + 1; }`);
   const [refactoredCode, setRefactoredCode] = useState("");
   const { backendUrl } = useContext(AppContext);
+  const {saveHistory} = useContext(AppContext)
 
   async function handleRefactor() {
     try {
       const response = await axios.post(backendUrl + "/ai/code-refactoring", {
         code,
       });
-      setRefactoredCode(response.data);
+        const result = response.data;
+      setRefactoredCode(result);
+        saveHistory({
+      feature: "Code Refactor",
+      input: code,
+      output: result,
+    })
     } catch (error) {
       console.error("Error refactoring code:", error);
     }

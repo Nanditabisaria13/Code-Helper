@@ -11,8 +11,18 @@
   "license": "ISC",
   "dependencies": {
     "@google/generative-ai": "^0.22.0",
+    "axios": "^1.9.0",
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.0",
+    "cloudinary": "^2.7.0",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "form-data": "^4.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.1",
+    "multer": "^2.0.2"
   }
 }

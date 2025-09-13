@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import Main from "../components/Main";
-import { AppContext } from "../context/AppContext";
+import Main from "../../components/Common/Main";
+import { AppContext } from "../../context/AppContext";
 
 const CodeUnitTestGeneration = () => {
   const [code, setCode] = useState(`function sum(){
@@ -9,6 +9,7 @@ const CodeUnitTestGeneration = () => {
   }`);
   const [unitTests, setUnitTests] = useState("");
   const { backendUrl } = useContext(AppContext);
+  const {saveHistory} = useContext(AppContext)
 
   const handleGenerateUnitTests = async () => {
     try {
@@ -16,7 +17,13 @@ const CodeUnitTestGeneration = () => {
         backendUrl + "/ai/code-generateUnitTest",
         { code }
       );
-      setUnitTests(response.data);
+        const result = response.data;
+      setUnitTests(result);
+        saveHistory({
+      feature: "Unit Test Generation",
+      input: code,
+      output: result,
+    })
     } catch (err) {
       console.error("Error in generate unit test:", err);
     }
