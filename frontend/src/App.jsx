@@ -12,7 +12,6 @@ import Home from "./pages/Common/Home";
 import { ToastContainer } from "react-toastify";
 import { useState } from "react";
 import Sidebar from "./components/User/Sidebar";
-// import { useUser } from '@clerk/clerk-react'
 import UserDashboard from "./pages/User/UserDashboard";
 import { UserNavbar } from "./components/User/UserNavbar";
 import SignUp from "./pages/Common/SignUp";

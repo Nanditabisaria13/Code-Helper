@@ -7,10 +7,10 @@ module.exports.createUser = async({
         throw new Error('FirstName , Email and Password are required!')
      }
 
-   //   const isUserAlreadyExists = await userModel.findOne({email})
-   //      if(isUserAlreadyExists){
-   //        throw new Error('User is already exists!')
-   //  }
+     const isUserAlreadyExists = await userModel.findOne({email})
+        if(isUserAlreadyExists){
+          throw new Error('User is already exists!')
+    }
 
      const hashedPassword = await userModel.hashPassword(password)
      
