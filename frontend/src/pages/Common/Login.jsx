@@ -3,6 +3,7 @@ import { Link ,useNavigate} from 'react-router-dom'
 import {UserContext} from '../../context/UserContext'
 import { AppContext } from '../../context/AppContext'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 const Login = () => {
 
   const [email, setEmail] = useState('')
@@ -18,12 +19,13 @@ const Login = () => {
           email,
           password
         }).then((res)=>{
-          console.log(res.data)
+           toast.success("Login Successfully!");
           localStorage.setItem('token',res.data.token)
           setUser(res.data.user)
           navigate('/')
         }).catch((err)=>{
           console.log(err.response.data)
+          toast.error("Invalid Credentials!");
         })
    }
    

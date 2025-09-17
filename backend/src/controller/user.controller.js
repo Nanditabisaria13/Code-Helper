@@ -159,7 +159,7 @@ module.exports.pinFeature = async (req, res) => {
            return res.status(403).json({success:false, messsage:'Something went wrong!'})
        }
 
-    // if (!user.pinnedFeatures.includes(feature)) {
+
     if(!user.pinnedFeatures.filter(f => f && f.id).some(f => f.id === feature.id)){
       user.pinnedFeatures.push(feature);
       await user.save();

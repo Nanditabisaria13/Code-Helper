@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useContext } from 'react';
-import { useState } from 'react';
 import { UserContext } from '../../context/UserContext';
     
  const Feature = ({features})=>{
@@ -11,7 +10,7 @@ import { UserContext } from '../../context/UserContext';
      {features.map((feature) => (
           <div
             key={feature.id}
-            // onClick={() => handleToolClick(feature.id)}
+
             className="p-5 bg-transparent drop-shadow-md border max-w-4xl flex flex-col  flex-shrink-0 border-[#535353] rounded-2xl  hover:shadow-lg transition cursor-pointer"
           >
 

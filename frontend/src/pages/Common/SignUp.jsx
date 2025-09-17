@@ -3,6 +3,7 @@ import { Link,useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import {UserContext} from '../../context/UserContext'
 import { AppContext } from '../../context/AppContext'
+import { toast } from 'react-toastify'
 
 
 const SignUp = () => {
@@ -24,12 +25,13 @@ const SignUp = () => {
           email,
           password
         }).then((res)=>{
-          console.log(res.data)
           localStorage.setItem('token',res.data.token)
+          toast.success("Successfully Registered Your Account");
           setUser(res.data.user)
           navigate('/')
         }).catch((err)=>{
           console.log(err.response.data)
+           toast.error("Invalid Credentials!");
         })
    }
   return (

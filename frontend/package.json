@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
     "@tailwindcss/vite": "^4.0.4",
     "axios": "^1.7.9",
     "prismjs": "^1.29.0",
@@ -18,7 +19,6 @@
     "react-markdown": "^10.0.0",
     "react-router-dom": "^7.2.0",
     "react-scroll": "^1.9.3",
-    "react-simple-code-editor": "^0.14.1",
     "react-toastify": "^11.0.5",
     "recharts": "^3.1.2",
     "rehype-highlight": "^7.0.2",
