@@ -25,7 +25,7 @@ const CodeAlgorithmExplanation = () => {
         backendUrl + "/ai/code-algorithmExplanation",
         { code }
       );
-      const result = response.data;
+      const result = response.data
       setAlgorithmExplanation(result);
         saveHistory({
       feature: "Algorithm Explanation",

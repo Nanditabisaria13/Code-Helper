@@ -45,8 +45,8 @@ const Navbar = () => {
           className="ri-menu-3-line w-6 text-white text-2xl md:hidden"
           onClick={() => SetShowMenu(true)}
         ></i>
-        <div>
-          <button onClick={()=>navigate('/signup')} className='hidden  bg-transparent text-white sm:flex items-center gap-4 px-4 py-2 sm:px-8 sm:py-3 text-sm sm:text-base border border-white rounded-xl hover:bg-white hover:text-black '>
+        <div onClick={()=>navigate('/signup')}>
+          <button  className='hidden  bg-transparent text-white sm:flex items-center gap-4 px-4 py-2 sm:px-8 sm:py-3 text-sm sm:text-base border border-white rounded-xl hover:bg-white hover:text-black '>
         Get Started 
        </button>
         <i className="ri-login-box-line text-3xl text-neutral-800 dark:text-white block sm:hidden"></i>

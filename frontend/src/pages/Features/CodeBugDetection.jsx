@@ -20,6 +20,7 @@ const CodeBugDetection = () => {
         code,
       });
       const result = response.data;
+     
       setBugReport(result);
       saveHistory({
       feature: "Code Bug Detection",

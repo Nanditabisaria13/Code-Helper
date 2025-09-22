@@ -18,7 +18,7 @@ module.exports.saveResult =  async (req, res) => {
       userId: req.user.id,
       feature,
       input,
-      output,
+      output
     });
 
     await newHistory.save();

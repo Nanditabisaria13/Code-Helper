@@ -13,12 +13,12 @@ const Hero = () => {
         <p className="text-6xl sm:text-7xl text-center font-bold text-white">
           Your Smart Coding Assistant
         </p>
-        <p className="text-xl sm:text-2xl text-center font-normal text-gray-100">
+        <p className="text-xl sm:text-2xl text-center font-medium text-gray-100">
           Automated code reviews, bug detection, optimization, and more
         </p>
-        <button className="cta-btn px-3 py-2 bg-white text-black text-xl font-normal rounded-lg cursor-pointer">
+        <button className="cta-btn px-4 py-2 bg-white text-black text-xl font-medium rounded-lg cursor-pointer hover:scale-99">
           <Link to="features" smooth={true} offset={-10} duration={500}>
-            Get Started
+           Try a Feature
           </Link>
         </button>
       </div>

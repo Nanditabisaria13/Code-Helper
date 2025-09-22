@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import "prismjs/themes/prism-tomorrow.css";
+import "prismjs/components/prism-javascript";
 import { toast } from 'react-toastify';
 
 const ViewHistory = () => {
@@ -38,6 +39,7 @@ ${input}
 \`\`\``}
              </Markdown>
              
+              
           </div> 
        
           
@@ -59,9 +61,9 @@ ${input}
                   <i className="ri-clipboard-fill text-xl text-white"></i>
                 </div>
                
-                <div >
+                <div>
                   <Markdown rehypePlugins={[rehypeHighlight]}>
-                    {output}
+                    {output} 
                   </Markdown>
                 </div>
               </div>
