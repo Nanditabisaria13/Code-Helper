@@ -27,7 +27,7 @@ const App = () => {
   const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
    const {token} = useContext(AppContext)
  
-  return (
+  return(
     <div className=" flex items-start max-w-full bg-[#141414] min-h-screen">
       <ToastContainer theme="dark" />
        
@@ -101,6 +101,10 @@ const App = () => {
     </div>
 
   );
+
+
+
+ 
 };
 
 export default App;

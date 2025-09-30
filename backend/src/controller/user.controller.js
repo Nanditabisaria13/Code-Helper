@@ -115,7 +115,7 @@ module.exports.deleteProfile = async(req,res)=>{
     const userId = req.user.id;
 
     await historyModel.deleteMany({ userId });
-    await userModel.findByIdAndUpdate({_id:userId})
+    await userModel.findByIdAndDelete({_id:userId})
 
     res.status(200).json({ success: true, message: 'Delete Your Account Successfully' });
   } catch (error) {
@@ -158,13 +158,10 @@ module.exports.pinFeature = async (req, res) => {
       if(!user){
            return res.status(403).json({success:false, messsage:'Something went wrong!'})
        }
-
-
     if(!user.pinnedFeatures.filter(f => f && f.id).some(f => f.id === feature.id)){
       user.pinnedFeatures.push(feature);
       await user.save();
     }
-    console.log(user)
     return res.status(200).json({
       success: true,
       message: "Feature pinned successfully",

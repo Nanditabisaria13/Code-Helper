@@ -52,7 +52,7 @@ export const UserNavbar = ({toggleSidebar}) => {
           </div>
           <div onClick={logout}>
             <i className="ri-logout-box-r-line text-white text-xl font-medium block sm:hidden"></i>
-           <button className='bg-red-500 text-white px-4 py-2 hidden sm:block rounded-md'>LogOut</button>
+           <button className='bg-red-500 text-white px-4 py-2 hidden sm:block rounded-md'>Log out</button>
           </div>
        
      </div>

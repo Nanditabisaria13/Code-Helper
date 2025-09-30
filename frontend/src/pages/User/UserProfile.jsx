@@ -149,7 +149,7 @@ const updateProfile = async () => {
 
           <div className="flex flex-col gap-5">
            
-              <div className="flex items-center justify-center gap-4 bg-transparent border border-[#535353]  drop-shadow-md rounded-lg  text-white">
+              <div className="flex items-center justify-center gap-4 bg-transparent border border-[#535353]  drop-shadow-md rounded-lg px-3 py-1 text-white">
                 <p className="text-white font-medium text-base">
                   Email:
                 </p>
@@ -177,18 +177,18 @@ const updateProfile = async () => {
             </div>
 
           
-           <div className=" flex gap-2 mt-4">
+           <div className="flex flex-col  sm:flex-row gap-2 mt-4">
               {isEdit ? (
                 <button
                   className="border border-primary px-8 py-2 rounded-lg bg-green-500 hover:bg-green-600 text-white transition-all
-                            text-base sm:text-xl "
+                            text-xl "
                   onClick={() => updateProfile()}
                 >
                   Save Information
                 </button>
               ) : (
                 <button
-                  className="border border-primary px-8 py-2 rounded-md bg-green-500 hover:bg-green-600 text-white transition-all
+                  className="border border-primary  px-8 py-2 rounded-md bg-green-500 hover:bg-green-600 text-white transition-all
                             text-base sm:text-xl "
                   onClick={() => setIsEdit(true)}
                 >
@@ -197,7 +197,7 @@ const updateProfile = async () => {
               )}
               <button
                 onClick={() => setShowDeleteModal(true)}
-                className="border border-primary px-10 py-2 rounded-lg bg-red-500 hover:bg-red-700
+                className="border border-primary px-2 sm:px-10 py-2 rounded-lg bg-red-500 hover:bg-red-700
                text-white transition-all text-base sm:text-xl font-normal"
               >
                 Delete Account

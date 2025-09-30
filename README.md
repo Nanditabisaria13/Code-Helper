@@ -79,8 +79,6 @@ npm run dev
 - Backend: `http://localhost:3000`
 
 
-
-
 # 📷 Screenshots
 
 Home Page
