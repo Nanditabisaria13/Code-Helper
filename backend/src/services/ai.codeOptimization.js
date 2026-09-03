@@ -3,7 +3,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 
 const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash", 
+     model: "gemini-2.5-flash-lite",
     systemInstruction: `
     You are an expert in algorithm design and performance optimization. Your task is to analyze the provided algorithm or code, explain it clearly in simple terms, and suggest potential improvements for better performance. You should focus on optimizing both time and space complexity.
 

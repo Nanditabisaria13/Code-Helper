@@ -3,7 +3,7 @@ const {response} = require('../app')
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY)
 const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
+     model: "gemini-2.5-flash-lite",
     systemInstruction: `
     You are a senior developer with over 7 years of experience in writing unit tests for JavaScript code. Your task is to generate unit tests for the given code, following best practices and ensuring high coverage. Please make sure to follow these guidelines:
 

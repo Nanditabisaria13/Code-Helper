@@ -2,7 +2,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 
 const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
+     model: "gemini-2.5-flash-lite",
     systemInstruction: `
     You are a highly skilled AI code analyzer with expert knowledge in various programming languages. Your task is to carefully review the provided code and detect any potential bugs, errors, or inefficiencies. Specifically, you should look for:
 

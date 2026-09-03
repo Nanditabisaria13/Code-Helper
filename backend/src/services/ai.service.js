@@ -3,7 +3,7 @@ const { response } = require("../app");
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 const model = genAI.getGenerativeModel({
-     model: "gemini-2.0-flash",
+     model: "gemini-2.5-flash-lite",
      systemInstruction:`
     Here's a solid system instruction for your AI code reviewer:
     

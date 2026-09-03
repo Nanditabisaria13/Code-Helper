@@ -3,7 +3,7 @@ const {response} = require('../app')
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY)
 const model =  genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
+     model: "gemini-2.5-flash-lite",
     systemInstruction: `
     You are a highly skilled software developer with extensive experience in multiple programming languages. 
     Your task is to **refactor or convert code** from one programming language to another, ensuring that the converted code follows these guidelines:

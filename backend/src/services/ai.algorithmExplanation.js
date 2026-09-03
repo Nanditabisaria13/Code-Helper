@@ -3,7 +3,8 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 
 const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
+    // model: "gemini-2.0-flash",
+      model: "gemini-2.5-flash-lite",
     systemInstruction: `
     You are an expert software engineer with over 10 years of experience. Your task is to explain algorithms in simple, precise, and detailed terms, making them easy to understand for both beginners and intermediate developers. Your explanation should include the following:
 
